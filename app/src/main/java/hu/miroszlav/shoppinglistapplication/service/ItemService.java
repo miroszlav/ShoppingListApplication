@@ -21,4 +21,8 @@ public final class ItemService {
     public Observable<List<Item>> getItems() {
         return apiService.getAllItems();
     }
+
+    public Observable<Void> saveItem(Item item) {
+        return apiService.saveItem(item);
+    }
 }

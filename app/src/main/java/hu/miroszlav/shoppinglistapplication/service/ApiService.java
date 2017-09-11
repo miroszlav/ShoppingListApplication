@@ -32,6 +32,10 @@ public final class ApiService {
         return serverApi.getItems();
     }
 
+    public Observable<Void> saveItem(Item item) {
+        return serverApi.postItem(item);
+    }
+
     private interface ServerApi {
 
         @POST("login")
@@ -40,6 +44,8 @@ public final class ApiService {
         @GET("items")
         Observable<List<Item>> getItems();
 
+        @POST("item")
+        Observable<Void> postItem(@Body Item item);
 
     }
 }

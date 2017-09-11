@@ -19,6 +19,7 @@ import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import hu.miroszlav.shoppinglistapplication.R;
 import hu.miroszlav.shoppinglistapplication.android.adapter.ItemAdapter;
 import hu.miroszlav.shoppinglistapplication.di.ComponentInjectorProvider;
@@ -69,6 +70,10 @@ public class DashboardActivity extends RxAppCompatActivity {
                 fillInRecyclerView();
             }
         });
+    }
+
+    @OnClick(R.id.add_item_button) void onItemAddClicked() {
+        startActivity(new Intent(this, ItemDetailActivity.class));
     }
 
     @Override
