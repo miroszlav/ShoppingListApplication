@@ -22,7 +22,7 @@ public final class ItemService {
         return apiService.getAllItems();
     }
 
-    public Observable<Void> saveItem(Item item) {
+    public Observable<List<Item>> saveItem(Item item) {
         return apiService.saveItem(item);
     }
 }

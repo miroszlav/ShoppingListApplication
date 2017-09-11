@@ -69,10 +69,10 @@ public class ItemDetailActivity extends RxAppCompatActivity {
             itemService.saveItem(item)
                     .subscribeOn(io())
                     .observeOn(mainThread())
-                    .compose(this.<Void>bindToLifecycle())
-                    .subscribe(new AbstractObserver<Void>() {
+                    .compose(this.<List<Item>>bindToLifecycle())
+                    .subscribe(new AbstractObserver<List<Item>>() {
                         @Override
-                        public void onNext(@NonNull Void item) {
+                        public void onNext(@NonNull List<Item> items) {
                             finish();
                         }
 
