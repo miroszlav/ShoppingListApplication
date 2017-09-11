@@ -72,6 +72,7 @@ public class LoginActivity extends RxAppCompatActivity {
                         public void onNext(@NonNull Token token) {
                             loginService.storeToken(token);
                             startActivity(new Intent(LoginActivity.this, DashboardActivity.class));
+                            finish();
                         }
 
                         @Override

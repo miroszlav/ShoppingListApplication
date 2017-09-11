@@ -15,6 +15,13 @@
         <activity
             android:name=".android.activity.LoginActivity"
             android:label="@string/title_activity_login"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".android.activity.DashboardActivity"
+            android:label="@string/dashboard"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".android.activity.SplashActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,10 +29,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".android.activity.DashboardActivity"
-            android:label="@string/dashboard"
-            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>
