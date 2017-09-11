@@ -1,6 +1,5 @@
 package hu.miroszlav.shoppinglistapplication.android.widget;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.support.v7.widget.CardView;
 import android.view.View;

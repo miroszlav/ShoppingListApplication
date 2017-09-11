@@ -3,9 +3,8 @@ package hu.miroszlav.shoppinglistapplication.android.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TextInputEditText;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.EditText;
-import android.widget.Toast;
 
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
 
@@ -18,10 +17,7 @@ import hu.miroszlav.shoppinglistapplication.R;
 import hu.miroszlav.shoppinglistapplication.model.Token;
 import hu.miroszlav.shoppinglistapplication.service.LoginService;
 import hu.miroszlav.shoppinglistapplication.util.AbstractObserver;
-import hu.miroszlav.shoppinglistapplication.validator.LoginValidator;
-import io.reactivex.Observer;
 import io.reactivex.annotations.NonNull;
-import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Action;
 
 import static android.view.View.*;
@@ -37,6 +33,7 @@ public class LoginActivity extends RxAppCompatActivity {
 
     @Inject LoginService loginService;
 
+    @BindView(R.id.login_toolbar) Toolbar toolbar;
     @BindView(R.id.username) TextInputEditText userNameView;
     @BindView(R.id.password) TextInputEditText passwordView;
     @BindView(R.id.login_progress) View progressView;
@@ -49,6 +46,7 @@ public class LoginActivity extends RxAppCompatActivity {
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
         getInjectorProvider().getMainComponent().inject(this);
+        setSupportActionBar(toolbar);
     }
 
     @OnClick(R.id.sign_in_button)

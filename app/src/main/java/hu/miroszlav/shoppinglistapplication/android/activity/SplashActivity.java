@@ -7,7 +7,6 @@ import android.os.Bundle;
 import javax.inject.Inject;
 
 import hu.miroszlav.shoppinglistapplication.R;
-import hu.miroszlav.shoppinglistapplication.di.ComponentInjectorProvider;
 import hu.miroszlav.shoppinglistapplication.service.LoginService;
 
 import static hu.miroszlav.shoppinglistapplication.di.ComponentInjectorProvider.getInjectorProvider;

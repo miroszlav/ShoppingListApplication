@@ -22,12 +22,10 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import hu.miroszlav.shoppinglistapplication.R;
 import hu.miroszlav.shoppinglistapplication.android.adapter.ItemAdapter;
-import hu.miroszlav.shoppinglistapplication.di.ComponentInjectorProvider;
 import hu.miroszlav.shoppinglistapplication.model.Item;
 import hu.miroszlav.shoppinglistapplication.service.ItemService;
 import hu.miroszlav.shoppinglistapplication.service.LoginService;
 import hu.miroszlav.shoppinglistapplication.util.AbstractObserver;
-import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.functions.Action;
 

@@ -6,7 +6,6 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.Button;
 
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
 
@@ -22,7 +21,6 @@ import hu.miroszlav.shoppinglistapplication.model.Item;
 import hu.miroszlav.shoppinglistapplication.service.ItemService;
 import hu.miroszlav.shoppinglistapplication.util.AbstractObserver;
 import io.reactivex.annotations.NonNull;
-import io.reactivex.functions.Action;
 
 import static android.widget.Toast.*;
 import static hu.miroszlav.shoppinglistapplication.di.ComponentInjectorProvider.getInjectorProvider;
