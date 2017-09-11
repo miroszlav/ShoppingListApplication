@@ -21,14 +21,17 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import hu.miroszlav.shoppinglistapplication.R;
 import hu.miroszlav.shoppinglistapplication.android.adapter.ItemAdapter;
+import hu.miroszlav.shoppinglistapplication.di.ComponentInjectorProvider;
 import hu.miroszlav.shoppinglistapplication.model.Item;
 import hu.miroszlav.shoppinglistapplication.service.ItemService;
 import hu.miroszlav.shoppinglistapplication.service.LoginService;
 import hu.miroszlav.shoppinglistapplication.util.AbstractObserver;
+import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.annotations.NonNull;
 
 import static android.widget.Toast.LENGTH_SHORT;
 import static android.widget.Toast.makeText;
+import static hu.miroszlav.shoppinglistapplication.android.util.ViewUtils.getItemDecorator;
 import static hu.miroszlav.shoppinglistapplication.di.ComponentInjectorProvider.getInjectorProvider;
 import static io.reactivex.android.schedulers.AndroidSchedulers.mainThread;
 import static io.reactivex.schedulers.Schedulers.io;
@@ -57,7 +60,7 @@ public class DashboardActivity extends RxAppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         itemAdapter = new ItemAdapter(new ArrayList<Item>());
         recyclerView.setAdapter(itemAdapter);
-
+        recyclerView.addItemDecoration(getItemDecorator(4));
         swipeRefreshLayout.setColorSchemeResources(R.color.colorPrimary);
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
