@@ -28,6 +28,7 @@ import hu.miroszlav.shoppinglistapplication.service.LoginService;
 import hu.miroszlav.shoppinglistapplication.util.AbstractObserver;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.annotations.NonNull;
+import io.reactivex.functions.Action;
 
 import static android.widget.Toast.LENGTH_SHORT;
 import static android.widget.Toast.makeText;
@@ -76,11 +77,23 @@ public class DashboardActivity extends RxAppCompatActivity {
         fillInRecyclerView();
     }
 
+    @Override
+    public void onPause() {
+        super.onPause();
+        swipeRefreshLayout.setRefreshing(false);
+    }
+
     private void fillInRecyclerView() {
         itemService.getItems()
                 .subscribeOn(io())
                 .observeOn(mainThread())
                 .compose(this.<List<Item>>bindToLifecycle())
+                .doAfterTerminate(new Action() {
+                    @Override
+                    public void run() throws Exception {
+                        swipeRefreshLayout.setRefreshing(false);
+                    }
+                })
                 .subscribe(new AbstractObserver<List<Item>>() {
                     @Override
                     public void onNext(@NonNull List<Item> items) {
