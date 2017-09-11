@@ -15,4 +15,6 @@
     <string name="logout">Logout</string>
     <string name="required_field_error">All fields are required!</string>
     <string name="dashboard">Dashboard</string>
+    <string name="quantity">Quantity:</string>
+    <string name="item_fetch_error">Error occurred during fetching item list!</string>
 </resources>
