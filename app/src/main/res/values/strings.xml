@@ -14,4 +14,5 @@
     <string name="invalid_credentials">Invalid credentials</string>
     <string name="logout">Logout</string>
     <string name="required_field_error">All fields are required!</string>
+    <string name="dashboard">Dashboard</string>
 </resources>

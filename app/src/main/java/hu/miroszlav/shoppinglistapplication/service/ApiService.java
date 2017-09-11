@@ -1,13 +1,17 @@
 package hu.miroszlav.shoppinglistapplication.service;
 
+import java.util.List;
+
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
+import hu.miroszlav.shoppinglistapplication.model.Item;
 import hu.miroszlav.shoppinglistapplication.model.LoginInfo;
 import hu.miroszlav.shoppinglistapplication.model.Token;
 import io.reactivex.Observable;
 import retrofit2.Retrofit;
 import retrofit2.http.Body;
+import retrofit2.http.GET;
 import retrofit2.http.POST;
 
 @Singleton
@@ -24,10 +28,18 @@ public final class ApiService {
         return serverApi.login(loginInfo);
     }
 
+    public Observable<List<Item>> getAllItems() {
+        return serverApi.getItems();
+    }
+
     private interface ServerApi {
 
         @POST("login")
         Observable<Token> login(@Body LoginInfo loginInfo);
+
+        @GET("items")
+        Observable<List<Item>> getItems();
+
 
     }
 }
